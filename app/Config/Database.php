@@ -7,7 +7,6 @@ use CodeIgniter\Database\Config;
 /**
  * Database Configuration
  */
-$DATABASE_URL = parse_url(getenv("DATABASE_URL"));
 
 class Database extends Config
 {
@@ -34,10 +33,10 @@ class Database extends Config
      */
     public $default = [
         'DSN'      => '',
-        'hostname' => $GLOBALS ['DATABASE_URL']["host"],
-        'username' => $GLOBALS ['DATABASE_URL']["user"],
-        'password' => $GLOBALS ['DATABASE_URL']["pass"],
-        'database' => ltrim($GLOBALS ['DATABASE_URL']["path"], "/"),
+        'hostname' => 'ec2-54-159-175-38.compute-1.amazonaws.com',
+        'username' => 'vvfzbtqsoibxfs',
+        'password' => 'ebf9d81514224a30b3ad8cdb7612a8a118b5b0d6dda36ce9a99d523d79026dee',
+        'database' => 'd85gsra6k6v789',
         'DBDriver' => 'postgres',
         'DBPrefix' => '',
         'pConnect' => false,
@@ -49,7 +48,7 @@ class Database extends Config
         'compress' => false,
         'strictOn' => false,
         'failover' => [],
-        'port'     => $GLOBALS ['DATABASE_URL']["port"],
+        'port'     => 5432,
     ];
 
     /**
