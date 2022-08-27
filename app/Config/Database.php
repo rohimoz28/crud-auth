@@ -7,6 +7,8 @@ use CodeIgniter\Database\Config;
 /**
  * Database Configuration
  */
+$DATABASE_URL = parse_url(getenv("DATABASE_URL"));
+
 class Database extends Config
 {
     /**
@@ -32,11 +34,11 @@ class Database extends Config
      */
     public $default = [
         'DSN'      => '',
-        'hostname' => 'localhost',
-        'username' => '',
-        'password' => '',
-        'database' => '',
-        'DBDriver' => 'MySQLi',
+        'hostname' => $GLOBALS ['DATABASE_URL']["host"],
+        'username' => $GLOBALS ['DATABASE_URL']["user"],
+        'password' => $GLOBALS ['DATABASE_URL']["pass"],
+        'database' => ltrim($GLOBALS ['DATABASE_URL']["path"], "/"),
+        'DBDriver' => 'postgres',
         'DBPrefix' => '',
         'pConnect' => false,
         'DBDebug'  => (ENVIRONMENT !== 'production'),
@@ -47,7 +49,7 @@ class Database extends Config
         'compress' => false,
         'strictOn' => false,
         'failover' => [],
-        'port'     => 3306,
+        'port'     => $GLOBALS ['DATABASE_URL']["port"],
     ];
 
     /**
