@@ -37,7 +37,7 @@ class Database extends Config
         'username' => 'vvfzbtqsoibxfs',
         'password' => 'ebf9d81514224a30b3ad8cdb7612a8a118b5b0d6dda36ce9a99d523d79026dee',
         'database' => 'd85gsra6k6v789',
-        'DBDriver' => 'postgres',
+        'DBDriver' => 'Postgre',
         'DBPrefix' => '',
         'pConnect' => false,
         'DBDebug'  => (ENVIRONMENT !== 'production'),
